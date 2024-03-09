@@ -17,21 +17,21 @@ export default function auth({
   providers: any;
 }) {
   return (
-    <div className="w-full flex items-center justify-center">
-      <div className="w-full h-100 flex items-center justify-center">
+    <div className="flex items-center justify-center w-full">
+      <div className="flex items-center justify-center w-full h-100">
         {/*----Form----*/}
-        <div className="w-full sm:w5/6 md:w-2/3 lg:w1/2 xl:w-1/3 2xl:w-1/3 h-full bg-white flex flex-col items-center justify-center">
+        <div className="flex flex-col items-center justify-center w-full h-full bg-white sm:w5/6 md:w-2/3 lg:w1/2 xl:w-1/3 2xl:w-1/3">
           {tab == "signin" ? (
             <LoginForm callbackUrl={callbackUrl} csrfToken={csrfToken} />
           ) : (
             <RegisterForm />
           )}
-          <div className="w-full flex items-center justify-between px-12">
+          <div className="flex items-center justify-between w-full px-12">
             <div className="w-full h-[1px] bg-gray-300"></div>
-            <span className="text-sm uppercase mx-6 text-gray-400">Or</span>
+            <span className="mx-6 text-sm text-gray-400 uppercase">Or</span>
             <div className="w-full h-[1px] bg-gray-300"></div>
           </div>
-          <div className="mt-3 grid grid-cols-2 gap-x-4 gap-y-2">
+          <div className="grid grid-cols-2 mt-3 gap-x-4 gap-y-2">
             {providers.map((provider: any) => {
               if (provider.name == "Credentials") return;
               return (
@@ -41,7 +41,7 @@ export default function auth({
                   text={
                     tab == "signup"
                       ? `Sign up with ${provider.name}`
-                      : `Sign in with ${provider.name}`
+                      : `Signn in with ${provider.name}`
                   }
                   csrfToken={csrfToken}
                 />
